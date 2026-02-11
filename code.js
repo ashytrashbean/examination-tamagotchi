@@ -48,13 +48,13 @@ class Pet{
     // Method to set pet image based on selected animal type    
     petType(){
         if(this.animType === "dog"){
-            petImg.src = "/animals/Dog.png"
+            petImg.src = "./animals/Dog.png"
         }else if(this.animType === "cat"){
-            petImg.src = "/animals/Cat.png"
+            petImg.src = "./animals/Cat.png"
         }else if(this.animType === "hamster"){
-            petImg.src = "/animals/Hamster.png"
+            petImg.src = "./animals/Hamster.png"
         }else if(this.animType === "horse"){
-            petImg.src = "/animals/Horse.png"
+            petImg.src = "./animals/Horse.png"
         }
     }
 
