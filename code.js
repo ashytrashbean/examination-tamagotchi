@@ -138,9 +138,9 @@ class Pet{
 
     static async randomPetName(){
         try {
-        const response = await fetch('https://randomuser.me/api/');
+        const response = await fetch('https://randomuser.me/api/0.8');
         const data = await response.json();
-        return data.results[0].name.first;
+        return data.results[0].user.name.first.charAt(0).toUpperCase() + data.results[0].user.name.first.slice(1);
         } catch (error) {
             console.error('Error fetching random name:', error);
             return "Pet";
