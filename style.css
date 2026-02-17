@@ -86,3 +86,34 @@ button:hover{
     background-color: #fb7d1d;
 }
 
+
+progress{
+    width: 200px;
+    height: 20px;
+    background-color: #d9d9d9;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+}
+
+
+#energy{
+    background-color: goldenrod;
+
+}
+#energy::-moz-progress-bar{
+    background-color: goldenrod;
+}
+#energy::-webkit-progress-value{
+    background-color: goldenrod;
+}
+
+#fullness{
+    background-color: sienna;
+
+}
+#fullness::-moz-progress-bar{
+    background-color: sienna;
+}
+#fullness::-webkit-progress-value{
+    background-color: sienna;
+}

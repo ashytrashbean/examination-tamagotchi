@@ -50,7 +50,7 @@ class Pet{
         if(this.animType === "dog"){
             petImg.src = "./animals/idle_dog.gif"
         }else if(this.animType === "cat"){
-            petImg.src = "./animals/Cat.png"
+            petImg.src = "./animals/cat_idle.gif"
         }else if(this.animType === "hamster"){
             petImg.src = "./animals/Hamster.png"
         }else if(this.animType === "horse"){
@@ -98,9 +98,18 @@ class Pet{
     // Methods for pet interactions that update stats, progress bars, and log activities
     nap(){
         clearInterval(this.timerID);
+
         this.energy += 40;
         this.hapiness -= 10;
         this.fullness -= 10;
+        
+        if(this.animType === "dog"){
+            petImg.src = "./animals/dog_sleep.gif";
+            setTimeout(() => {
+                petImg.src = "./animals/idle_dog.gif";
+            }, 5000);
+        }
+
         this.updateProgress();
         this.logActivity(`${this.name} took a nap.`);
         this.startTimer();
@@ -108,9 +117,11 @@ class Pet{
 
     play(){
         clearInterval(this.timerID);
+
         this.hapiness += 30;
         this.energy -= 10;
         this.fullness -= 10;
+
         this.updateProgress();
         this.logActivity(`${this.name} played and had fun!`);
         this.startTimer();
@@ -118,9 +129,18 @@ class Pet{
 
     eat(){
         clearInterval(this.timerID);
+
         this.fullness += 30;
         this.hapiness += 5;
         this.energy -= 15;
+
+        if(this.animType === "dog"){
+            petImg.src = "./animals/dog_eat.gif";
+            setTimeout(() => {
+                petImg.src = "./animals/idle_dog.gif";
+            }, 2000);
+        }
+
         this.updateProgress();
         this.logActivity(`${this.name} ate some food and feels satisfied.`);
         this.startTimer();
