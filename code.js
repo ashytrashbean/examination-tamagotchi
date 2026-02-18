@@ -148,6 +148,10 @@ class Pet{
 
     // Method to update the progress bars based on pet's current stats
     updateProgress(){
+        this.energy = Math.min(Math.max(this.energy, 0), 100);
+        this.fullness = Math.min(Math.max(this.fullness, 0), 100);
+        this.hapiness = Math.min(Math.max(this.hapiness, 0), 100);
+
         energyValue.innerText = this.energy;
         fullnessValue.innerText = this.fullness;
         hapinessValue.innerText = this.hapiness;
