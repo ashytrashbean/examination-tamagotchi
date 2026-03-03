@@ -122,6 +122,13 @@ class Pet{
         this.energy -= 10;
         this.fullness -= 10;
 
+        if(this.animType === "dog"){
+            petImg.src = "./animals/playing_dog.gif";
+            setTimeout(() => {
+                petImg.src = "./animals/idle_dog.gif";
+            }, 6500);
+        }
+
         this.updateProgress();
         this.logActivity(`${this.name} played and had fun!`);
         this.startTimer();
